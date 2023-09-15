@@ -1,7 +1,7 @@
 <?php
 
   try{
-    $pdo = new PDO("mysql:dbname=school;hostname=localhost",'root','root');
+    $pdo = new PDO("mysql:dbname=testing;hostname=localhost",'root','admin');
     die(var_dump($pdo));
   } catch(PDOException $e) {
     die($e->getmessage());

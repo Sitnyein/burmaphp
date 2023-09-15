@@ -1,7 +1,7 @@
 <?php 
 try{
   
-$pdo=new pdo("mysql:dbname=school;host=localhost",'root','root',);
+$pdo=new pdo("mysql:dbname=testing;host=localhost",'root','admin',);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $statement=$pdo->prepare("SELECT * from testing where id=:id");
