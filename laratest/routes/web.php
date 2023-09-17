@@ -17,9 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/chankhine', function () {
-    echo "hello world i am waiting laravel";
-});
+Route::get('/chankhine', fn () => "hello world i am waiting laravel");
 
 Route::get('/aiolab/{age?}',function($age=22) {
     echo "his age is".$age;
@@ -34,3 +32,12 @@ Route::get('/chan',function() {
             ->with('name', 'Victoria')
             ->with('job', 'programmer');
 });
+
+// urI view parameter
+Route::view('chan/koko/sitnyein/testing','test',['person' => "hello i am lazy boy"])->name('coco');
+//
+Route::view('service','custom.service')->name('ser');
+
+Route::get('add/{num1}/{num2}',function($num1,$num2){
+    return $num1 * $num2;
+})->name('name');

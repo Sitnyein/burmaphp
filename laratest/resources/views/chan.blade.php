@@ -11,6 +11,11 @@
     <a href="{{url('/chankhine')}}">list </a>
     {{ url('chan') }}
     {{ url('welcome')}}
+    {{-- <a href="{{url('chan/koko/sitnyein/testing')}}">testing</a> --}}
+     <a href="{{route('coco')}}">test</a>
+     <a href="{{route('ser')}}">service</a>
+     {{-- <a href="{{url('add/10/20')}}">add</a> --}}
+     <a href="{{route('name',[5,5])}}">adds</a>
      <header>
         <h1>chankhine</h1>
      </header>
