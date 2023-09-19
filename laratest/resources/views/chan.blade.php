@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    @yield('header')
     <a href="{{ url('/') }}">welcom blade</a>
     <a href="{{url('/chankhine')}}">list </a>
     {{ url('chan') }}
@@ -21,10 +22,20 @@
      </header>
      <div>
         {{-- {{ }} xss attack protect  --}}
-        <div>this is body tag  and writer is {{$name."  he is a".$job}}</div>
+        {{-- <div>this is body tag  and writer is {{$name."  he is a".$job}}</div> --}}
+        <div>this is body tag</div>
      </div>
+     <hr>
      <footer>
-        this is footer
+        this is footer @yield('chankhine')
      </footer>
+     <form action="{{url('postmethod')}}" method="post">
+        {{-- @csrf --}} {{csrf_field()}}
+        <input type="text" name="name" required>
+        <input type="email" name="email" required>
+        <button type="submit">click</button>
+    </form>
+     <p id="demo"></p>
+     @stack("jschan")
 </body>
 </html>
