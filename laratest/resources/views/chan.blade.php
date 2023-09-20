@@ -6,7 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+     .cover{
+        object-fit: cover;
+        object-position: center;
+        position:absolute;
+        z-index: -1;
+        width:100%; height:100%;
+    }
+</style>
 <body>
+ <div>
+    <img src="{{ asset('girl.jpg') }}" alt="" class="cover">
     @yield('header')
     <a href="{{ url('/') }}">welcom blade</a>
     <a href="{{url('/chankhine')}}">list </a>
@@ -25,7 +36,7 @@
         {{-- <div>this is body tag  and writer is {{$name."  he is a".$job}}</div> --}}
         <div>this is body tag</div>
      </div>
-     <hr>
+
      <footer>
         this is footer @yield('chankhine')
      </footer>
@@ -37,5 +48,6 @@
     </form>
      <p id="demo"></p>
      @stack("jschan")
+ </div>
 </body>
 </html>

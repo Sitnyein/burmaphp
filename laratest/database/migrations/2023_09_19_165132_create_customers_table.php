@@ -13,8 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('testers', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->longText('description');
+            $table->string('image')->nullable(true);
+            $table->integer('fee')->nullable(true)->default('2000');
+            $table->string('address')->nullable(true)->default('anonymous');
+            $table->integer('rating')->nullable(true)->default('5');
             $table->timestamps();
         });
     }
@@ -26,6 +32,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('testers');
+        Schema::dropIfExists('customers');
     }
 };
+

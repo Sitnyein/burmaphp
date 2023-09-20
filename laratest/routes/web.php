@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\testController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,3 +91,12 @@ Route::get('laraCode',function() {
  });
 
  Route::get('test',[testController::class,'home']);
+ Route::get('donate',function(){
+    echo "you have created successfully and check phpmyadmin";
+ })->name('donate');
+
+ //todolist this is call for url
+  Route::get('customer/create',[CustomerController::class,'customcreate'])->name('custom');
+//todolist only create
+  Route::post('create',[CustomerController::class,'create'])->name('create');
+
