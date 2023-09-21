@@ -4,20 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CustomerController extends Controller
 {
     //show home page
     public function customcreate( ) {
-        $post= Customer::all();
+        $post= Customer::orderBY('created_at','desc')
+        ->paginate(3);
         return view('todolist.create',compact('post'));
     }
     //create only
     public function create(Request $req) {
+        $this->validationCheck($req);
      $data=$this->createclone($req);
 
      Customer::create($data);
-     return  redirect()->route('donate');
+     return  redirect()->route('custom');
     }
 
     //read
@@ -55,9 +58,7 @@ class CustomerController extends Controller
     private function createclone($req) {
         $data = [
             'title'=> $req->postTitle,
-            'description' => $req->PostD,
-
-        ];
+            'description' => $req->PostD];
         $data['fee'] =$req->postFee == null? 2000 : $req->postFee;
         $data['address'] = $req->postAddress == null? 'anonymous' :$req->postAddress;
         $data['rating'] = $req->postrate == null? 5 :$req->postrate;
@@ -76,5 +77,35 @@ class CustomerController extends Controller
         ];
        return $data;
     }
+    //post validation
+private function validationCheck($request) {
+
+
+    $validation=[
+     'postTitle'=>'required|min:5|unique:customers,title,'. $request->postId,
+     'PostD'=>'required|min:4,',
+    'postimage'=>'mimes:jpg,bmp.png|file',
+     // 'postFee'=>'required',
+     // 'postAddress'=>'required',
+     // 'postrate'=>'required',
+
+
+ ];
+ $validationmessage=[
+     'postTitle.required'=>'You need to fill Post title',
+     'postTitle.min'=>'you must be write more than five letters ',
+     'postTitle.unique'=>'Title is already taken,Try another name',
+     'PostD.required'=>'You need to fill Post description',
+     // 'postFee.required'=>'You need to write fee',
+     // 'postAddress.required'=>'location access is need',
+     // 'postrate.required'=>'Plz give me comment',
+     'postimage.mimes' => 'it must be image only accept'
+
+ ];
+
+Validator::make($request->all(),$validation,$validationmessage)->validate();
+
+}
+
 }
 

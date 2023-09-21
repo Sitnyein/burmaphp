@@ -16,7 +16,12 @@
     }
 </style>
 <body>
-    <h1>{{$compactpost}}</h1>
+    @if(session('job'))
+    <h1>session has name</h1>
+    @else
+    <h1>there is no session</h1>
+    @endif
+    {{-- <h1>{{$compactpost}}</h1> --}}
  <div>
     <img src="{{ asset('girl.jpg') }}" alt="" class="cover">
     @yield('header')

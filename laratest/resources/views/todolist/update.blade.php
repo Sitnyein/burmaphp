@@ -5,8 +5,8 @@
     <div class="row mt-5">
         <div class="col-6 offset-3 ">
             <div class="my-3">
-                <a href="" class="text-decoration-none text-black">
-                    <i class="fa-solid fa-arrow-left"></i>back</a>
+                {{-- <a href="{{route('read',$edit['id'])}}" class="text-decoration-none text-black">
+                    <i class="fa-solid fa-arrow-left"></i>back</a> --}}
             </div>
             {{-- <h3>{{ $mage[0]['title'] }}</h3>
             <p class="text-muted shadow-sm p-3">{{ $mage[0]['description'] }}</p> --}}
@@ -28,7 +28,7 @@
 
                 <div>
                     @if ($edit['image'] == null)
-                        <img src="{{ asset('girl.jpg') }} " class="img-thumbnail mt-4 shadow-sm">
+                        <img src="{{ asset('batman.jpg') }} " class="img-thumbnail mt-4 shadow-sm">
                      @else
                      <h1>this is image</h1>
                      @endif

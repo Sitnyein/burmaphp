@@ -150,7 +150,7 @@
                         </span>
                         <div class="text-end d-flex">
                             <a href="{{route('delete',$item['id'])}}" class=" my-3 mx-3">
-                                <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash">forDelete</i></button>
+                                <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash m-2"></i>Delete</button>
                             </a>
 
 
@@ -163,7 +163,7 @@
                                 </form> --}}
                             <a href="{{route('read',$item['id'])}}" class="my-3">
                                 <button class="btn btn-sm btn-primary"><i
-                                        class="fa-solid fa-file-invoice">MoreDetails</i></button>
+                                        class="fa-solid fa-file-invoice m-2"></i>More Details</button>
                             </a>
 
                         </div>
@@ -186,6 +186,7 @@
                     @endfor --}}
                 </div>
                 {{-- {{ $post->appends(request()->query())->links() }} --}}
+                {{$post->links()}}
             </div>
         </div>
     </div>
