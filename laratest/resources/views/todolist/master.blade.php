@@ -15,7 +15,7 @@
         object-position: center;
         position:absolute;
         z-index: -1;
-        width:100%; height:120%;
+        width:100%; height:200%;
     }
     </style>
 </head>

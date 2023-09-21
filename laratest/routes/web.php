@@ -35,6 +35,7 @@ Route::get('/chan',function() {
     return view('chan')
             ->with('name', 'Victoria')
             ->with('job', 'programmer');
+
 });
 
 // urI view parameter
@@ -99,4 +100,13 @@ Route::get('laraCode',function() {
   Route::get('customer/create',[CustomerController::class,'customcreate'])->name('custom');
 //todolist only create
   Route::post('create',[CustomerController::class,'create'])->name('create');
+
+  //todolist more details read
+  Route::get('read/{readid}',[CustomerController::class,'read'])->name('read');
+  //todolist update page show
+  Route::get('updatepage/{id}',[CustomerController::class,'updatepage'])->name('updatepage');
+ //todolist update only
+  Route::post('update',[CustomerController::class,'update'])->name('update');
+  //todolist delete only
+  Route::get('delete/{id}',[CustomerController::class,'delete'])->name('delete');
 

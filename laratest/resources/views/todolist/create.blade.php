@@ -1,7 +1,7 @@
 @extends('todolist.master')
 
 @section('content')
-{{-- <img src="{{asset('spider.jpg')}}" class="cover"> --}}
+    {{-- <img src="{{asset('spider.jpg')}}" class="cover"> --}}
 
     <div class="container">
         <div class="row mt-2">
@@ -26,7 +26,7 @@
                         </div>
                     @endif
 
-                    <form action="{{route('create')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('create') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
 
@@ -56,8 +56,7 @@
                         <div class="text-group mb-3">
                             <label for="">Image</label>
                             <input type="file" name="postimage"
-                                class="form-control @error('postimage') is-invalid @enderror"
-                                value="">
+                                class="form-control @error('postimage') is-invalid @enderror" value="">
                             @error('postimage')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -96,7 +95,6 @@
                                 mb-3">
                             <label for="">Rating</label>
                             <input type="number" min="0" max="11"name="postrate"
-                                
                                 class=" form-control  @error('postrate') is-invalid @enderror">
 
                             @error('postrate')
@@ -132,47 +130,45 @@
                 </h4>
                 <div class="data-container">
                     {{-- @if (count($post) != 0) --}}
-                        {{-- @foreach ($post as $item) --}}
-                            <div class="post p-3 shadow-sm mb-3">
-                                <div class="row">
-                                    <h5 class="col-6">chankhine </h5>
-                                    <h5 class="col-5 offset-1">10 101 10</h5>
-                                </div>
-                                {{-- <p class="text-muted">{{ substr($item['description'], 0, 100) }}</p> // pure php --}}
-                                <p class="text-muted"></p>
-                                <span>
-                                    <small> <i
-                                            class="fa-solid fa-hand-holding-dollar text-warning"></i> 1000
-                                        Usd</span>
-                                |</small>
-                                <span>
-                                    <i class="fa-solid fa-location-dot"></i> mawlamyine|
-                                </span>
-                                <span>
-                                     <small> <i class="fa-solid fa-star text-success"> </i> </small>
-                                </span>
-                                <div class="text-end d-flex">
-                                    <a href="" class=" my-3 mx-3">
-                                        <button class="btn btn-sm btn-danger"><i
-                                                class="fa-solid fa-trash">forDelete</i></button>
-                                    </a>
+                    @foreach ($post as $item)
+                    <div class="post p-3  mb-3 shadow-sm">
+                        <div class="row">
+                            <h5 class="col-6 "> {{$item['title']}}</h5>
+                            <h5 class="col-5 offset-1 ">{{ $item->created_at->format('d-F-y') }}</h5>
+                        </div>
+                        {{-- <p class="text-muted">{{ substr($item['description'], 0, 100) }}</p> // pure php --}}
+                        <p>{{ Str::words($item['description'], 20, '...') }}</p>
+                        <span>
+                            <small> <i class="fa-solid fa-hand-holding-dollar "></i> {{$item['fee']}}
+                                Usd</span>
+                        |</small>
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i> {{$item['address']}}
+                        </span>
+                        <span>
+                            <small> <i class="fa-solid fa-star text-success"> </i> </small>
+                        </span>
+                        <div class="text-end d-flex">
+                            <a href="{{route('delete',$item['id'])}}" class=" my-3 mx-3">
+                                <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash">forDelete</i></button>
+                            </a>
 
 
 
-                                    {{-- //delete method    <form action="{{ route('delete', $item['id']) }}" method="POST">
+                            {{-- //delete method    <form action="{{ route('delete', $item['id']) }}" method="POST">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-sm btn-danger"><i
                                             class="fa-solid fa-trash">forDelete</i></button>
                                 </form> --}}
-                                    <a href="" class="my-3">
-                                        <button class="btn btn-sm btn-primary"><i
-                                                class="fa-solid fa-file-invoice">MoreDetails</i></button>
-                                    </a>
+                            <a href="{{route('read',$item['id'])}}" class="my-3">
+                                <button class="btn btn-sm btn-primary"><i
+                                        class="fa-solid fa-file-invoice">MoreDetails</i></button>
+                            </a>
 
-                                </div>
-                            </div>
-                        {{-- @endforeach --}}
+                        </div>
+                    </div>
+                    @endforeach
                     {{-- @else
                         <h1 class="text-danger text-center mt-3">There is no data</h1>
                     @endif --}}
@@ -194,4 +190,3 @@
         </div>
     </div>
 @endsection
-

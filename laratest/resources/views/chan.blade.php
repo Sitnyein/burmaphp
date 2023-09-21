@@ -16,6 +16,7 @@
     }
 </style>
 <body>
+    <h1>{{$compactpost}}</h1>
  <div>
     <img src="{{ asset('girl.jpg') }}" alt="" class="cover">
     @yield('header')
