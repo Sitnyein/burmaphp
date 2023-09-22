@@ -26,7 +26,7 @@
                     </div>
                     <div class="btn btn-sm bg-dark text-white me-2 my-3">
                         <span> <i class="fa-regular fa-calendar text-primary"></i> </span>
-                        {{ $mage['created_at'] }}
+                        {{ $mage->created_at->format('d-F-y') }}
                     </div>
 
                 </div>

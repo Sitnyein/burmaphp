@@ -95,7 +95,7 @@ Route::get('laraCode',function() {
  Route::get('donate',function(){
     echo "you have created successfully and check phpmyadmin";
  })->name('donate');
-
+ //todolist 
  //todolist this is call for url
   Route::get('customer/create',[CustomerController::class,'customcreate'])->name('custom');
 //todolist only create

@@ -9,8 +9,16 @@ use Illuminate\Support\Facades\Validator;
 class CustomerController extends Controller
 {
     //show home page
+    // $post=Customer::pluck('title');
     public function customcreate( ) {
-        $post= Customer::orderBY('created_at','desc')
+
+
+
+        $post = Customer::when(request('searchKey'),function ($query){
+            $key = request('searchKey');
+            $query->where('title','like','%'.$key.'%');
+        })
+        ->orderBY('created_at','desc')
         ->paginate(3);
         return view('todolist.create',compact('post'));
     }
@@ -26,7 +34,7 @@ class CustomerController extends Controller
     //read
     public function read($readid) {
         // dd("this is read page");
-        $mage = Customer::where('id',$readid)->first()->toArray();
+        $mage = Customer::where('id',$readid)->first();
         return view('todolist.read',compact('mage'));
     }
 

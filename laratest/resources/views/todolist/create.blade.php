@@ -116,10 +116,10 @@
                     <div class="row">
                         <div class="col-4">Total | 5 </div>
                         <div class="col-6 offset-2">
-                            <form action="" method="get">
+                            <form action="{{route('custom')}}" method="get">
                                 <div class="row">
                                     <input type="text" name="searchKey" class="form-control col"
-                                        placeholder="Enter search key" value="">
+                                        placeholder="Enter search key" value="{{ request('searchKey') }}">
                                     <button class="btn btn-outline-danger col-2 mx-1 " type="submit"> <i
                                             class="fa-brands fa-searchengin"></i>
                                     </button>
@@ -131,10 +131,10 @@
                 <div class="data-container">
                     {{-- @if (count($post) != 0) --}}
                     @foreach ($post as $item)
-                    <div class="post p-3  mb-3 shadow-sm">
+                    <div class="post p-3  mb-3 shadow-sm border border-warning">
                         <div class="row">
                             <h5 class="col-6 "> {{$item['title']}}</h5>
-                            <h5 class="col-5 offset-1 ">{{ $item->created_at->format('d-F-y') }}</h5>
+                            <h5 class="col-4 offset-2 ">{{ $item->created_at->format('d-F-y') }}</h5>
                         </div>
                         {{-- <p class="text-muted">{{ substr($item['description'], 0, 100) }}</p> // pure php --}}
                         <p>{{ Str::words($item['description'], 20, '...') }}</p>
@@ -185,8 +185,8 @@
                         </div>
                     @endfor --}}
                 </div>
-                {{-- {{ $post->appends(request()->query())->links() }} --}}
-                {{$post->links()}}
+                {{ $post->appends(request()->query())->links() }}
+                {{-- {{$post->links()}} --}}
             </div>
         </div>
     </div>
