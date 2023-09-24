@@ -2,14 +2,16 @@
 
 @section('content')
     {{-- <img src="{{asset('spider.jpg')}}" class="cover"> --}}
-
+    {{-- <div>
+        {{Auth::user()->name}}
+    </div> --}}
     <div class="container">
         <div class="row mt-2">
             <div class="col-4 ">
                 <div class="p-2">
                     @if (session('insertSuccess'))
                         <div class="alert-message">
-                            <div class="alert alert-Success alert-dismissible fade show" role="alert">
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                 <strong>{{ session('insertSuccess') }}</strong>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
@@ -25,6 +27,14 @@
                             </div>
                         </div>
                     @endif
+                    @if (session('delete'))
+                    <div class="alert-message">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>{{ session('delete') }}</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                @endif
 
                     <form action="{{ route('create') }}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -32,7 +42,7 @@
 
                         <div class="text-group mb-3">
                             <label for="">Post Title</label>
-                            <input type="text" name="postTitle"
+                            <input type="text" name="postTitle" vlaue="{{old('postTitle')}}"
                                 class=" form-control @error('postTitle') is-invalid @enderror"
                                 placeholder="Enter post Title...">
                             @error('postTitle')
@@ -45,7 +55,7 @@
                         <div class="text-group mb-3">
                             <label for="">Post Description</label>
                             <textarea name="PostD" class="form-control @error('PostD') is-invalid @enderror" cols="30" rows="10"
-                                placeholder="Enter post...."></textarea>
+                                placeholder="Enter post....">{{old('PostD')}}</textarea>
                             @error('PostD')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -67,7 +77,7 @@
 
                         <div class="text-group mb-3">
                             <label for="">Fee</label>
-                            <input type="text" name="postFee"
+                            <input type="text" name="postFee" value="{{old('postFee')}}"
                                 class=" form-control @error('postFee') is-invalid @enderror"
                                 placeholder="Enter post Fee...">
                             @error('postFee')
@@ -81,7 +91,7 @@
                                 mb-3">
 
                             <label for="">Address</label>
-                            <input type="text" name="postAddress"
+                            <input type="text" name="postAddress" value="{{old('postAddress')}}"
                                 class=" form-control  @error('postAddress') is-invalid @enderror"
                                 placeholder="Enter post Address...">
                             @error('postAddress')
@@ -94,7 +104,7 @@
                         <div class="text-group
                                 mb-3">
                             <label for="">Rating</label>
-                            <input type="number" min="0" max="11"name="postrate"
+                            <input type="number" min="0" max="11"name="postrate" value="{{old('postrate')}}"
                                 class=" form-control  @error('postrate') is-invalid @enderror">
 
                             @error('postrate')
@@ -114,7 +124,7 @@
             <div class="col-7 ">
                 <h4 class="mb-2">
                     <div class="row">
-                        <div class="col-4">Total | 5 </div>
+                        <div class="col-4">Total | {{$post->total()}}</div>
                         <div class="col-6 offset-2">
                             <form action="{{route('custom')}}" method="get">
                                 <div class="row">
@@ -129,7 +139,7 @@
                     </div>
                 </h4>
                 <div class="data-container">
-                    {{-- @if (count($post) != 0) --}}
+                    @if (count($post) != 0)
                     @foreach ($post as $item)
                     <div class="post p-3  mb-3 shadow-sm border border-warning">
                         <div class="row">
@@ -169,9 +179,9 @@
                         </div>
                     </div>
                     @endforeach
-                    {{-- @else
+                    @else
                         <h1 class="text-danger text-center mt-3">There is no data</h1>
-                    @endif --}}
+                    @endif
 
                     {{--
                     @for ($i = 0; $i < count($post); $i++)

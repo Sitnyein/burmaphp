@@ -23,14 +23,24 @@ class CustomerController extends Controller
         return view('todolist.create',compact('post'));
     }
     //create only
-    public function create(Request $req) {
-        $this->validationCheck($req);
-     $data=$this->createclone($req);
+    public function create(Request $request) {
+//        if($req->hasFile('postimage')){
+//         $path = $req->hasFile('postimage')->store('myimage');
+//         dd('success');
+// }
+     $this->validationCheck($request);
+     if(($request->hasFile('postimage'))){
+
+        $data=$this->createclone($request);
+    $test=uniqid() . $request->file('postimage')->getClientOriginalName();
+
+    $request->file('postimage')->storeAs('public',$test);
+       $data['image'] = $test; }
+
 
      Customer::create($data);
-     return  redirect()->route('custom');
+     return  redirect()->route('custom')->with(['insertSuccess' => 'Blog create success']);
     }
-
     //read
     public function read($readid) {
         // dd("this is read page");
@@ -46,9 +56,16 @@ class CustomerController extends Controller
 
     }
     //update only
-    public function update(Request $req) {
-        $id=$req->postId;
-       $data=$this->updateclone($req);
+    public function update(Request $request) {
+        $id=$request->postId;
+        $this->validationCheck($request);
+        $data=$this->updateclone($request);
+        if(($request->hasFile('postimage'))){
+
+        $test=uniqid() . $request->file('postimage')->getClientOriginalName();
+
+        $request->file('postimage')->storeAs('public',$test);
+           $data['image'] = $test; }
        Customer::where('id',$id)->update($data);
        return redirect()->route('custom');
 
@@ -58,7 +75,7 @@ class CustomerController extends Controller
     //delete only
     public function delete($id) {
         Customer::where('id',$id)->delete();
-        return redirect()->route('custom');
+        return redirect()->route('custom')->with(['delete' => 'you have been deleted blog']);
     }
 
 
@@ -77,14 +94,11 @@ class CustomerController extends Controller
     private function updateclone($req) {
         $data = [
             'title'=> $req->postTitle,
-            'description' => $req->PostD,
-            'fee' => $req->postFee,
-            'address' => $req->postAddress,
-            'rating' => $req->postrate
-
-        ];
-       return $data;
-    }
+            'description' => $req->PostD,];
+            $data['fee'] =$req->postFee == null? 2000 : $req->postFee;
+            $data['address'] = $req->postAddress == null? 'anonymous' :$req->postAddress;
+            $data['rating'] = $req->postrate == null? 5 :$req->postrate;
+            return $data;    }
     //post validation
 private function validationCheck($request) {
 

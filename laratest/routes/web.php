@@ -18,7 +18,7 @@ use App\Http\Controllers\CustomerController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Route::get('/chankhine', fn () => "hello world i am waiting laravel");
@@ -95,18 +95,30 @@ Route::get('laraCode',function() {
  Route::get('donate',function(){
     echo "you have created successfully and check phpmyadmin";
  })->name('donate');
- //todolist 
+
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
+    //todolist
  //todolist this is call for url
   Route::get('customer/create',[CustomerController::class,'customcreate'])->name('custom');
-//todolist only create
-  Route::post('create',[CustomerController::class,'create'])->name('create');
+  //todolist only create
+    Route::post('create',[CustomerController::class,'create'])->name('create');
 
-  //todolist more details read
-  Route::get('read/{readid}',[CustomerController::class,'read'])->name('read');
-  //todolist update page show
-  Route::get('updatepage/{id}',[CustomerController::class,'updatepage'])->name('updatepage');
- //todolist update only
-  Route::post('update',[CustomerController::class,'update'])->name('update');
-  //todolist delete only
-  Route::get('delete/{id}',[CustomerController::class,'delete'])->name('delete');
+    //todolist more details read
+    Route::get('read/{readid}',[CustomerController::class,'read'])->name('read');
+    //todolist update page show
+    Route::get('updatepage/{id}',[CustomerController::class,'updatepage'])->name('updatepage');
+   //todolist update only
+    Route::post('update',[CustomerController::class,'update'])->name('update');
+    //todolist delete only
+    Route::get('delete/{id}',[CustomerController::class,'delete'])->name('delete');
 
+});

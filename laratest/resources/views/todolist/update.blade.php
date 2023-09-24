@@ -16,13 +16,18 @@
 
                 <label for="">Title</label>
                 <input type="text" name="postTitle"
-                    class="form-control my-3 "
-                    value=" {{$edit['title']}} ">
+                    class="form-control my-3 @error('postTitle') is-invalid @enderror"
+                    value=" {{ old('postTitle', $edit['title'])}} ">
+                    @error('postTitle')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                     </div>
+                 @enderror
 
 
 
                 <label for="">Description</label>
-                <textarea name="PostD" cols="30" rows="10" class="form-control "> {{ $edit['description'] }}
+                <textarea name="PostD" cols="30" rows="10" class="form-control @error('PostD') is-invalid @enderror"> {{ old('PostD',$edit['description']) }}
                 </textarea>
 
 
@@ -30,12 +35,19 @@
                     @if ($edit['image'] == null)
                         <img src="{{ asset('batman.jpg') }} " class="img-thumbnail mt-4 shadow-sm">
                      @else
-                     <h1>this is image</h1>
+                     <img src="{{ asset('storage/' . $edit['image']) }} " class="img-thumbnail my-4 shadow-sm">
                      @endif
                 </div>
 
-                <input type="file" name="postimage"
-                    class="form-control mb-3 ">
+                {{-- <input type="file" name="postimage"
+                    class="form-control mb-3 "> --}}
+                    <input type="file" name="postimage"
+                    class="form-control mb-3 @error('postimage') is-invalid @enderror">
+                @error('postimage')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
 
 
                 <label for="">Price</label> <input type="number" name="postFee" class=" form-control my-1 "
