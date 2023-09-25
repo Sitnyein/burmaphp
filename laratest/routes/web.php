@@ -18,7 +18,7 @@ use App\Http\Controllers\CustomerController;
 */
 
 Route::get('/', function () {
-    return redirect()->route('login');
+    return redirect()->route('register');
 });
 
 Route::get('/chankhine', fn () => "hello world i am waiting laravel");
@@ -103,9 +103,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    // Route::get('/dashboard', function () {
-    //     return view('dashboard');
-    // })->name('dashboard');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
     //todolist
  //todolist this is call for url
   Route::get('customer/create',[CustomerController::class,'customcreate'])->name('custom');

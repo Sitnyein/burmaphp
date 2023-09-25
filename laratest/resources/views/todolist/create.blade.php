@@ -2,9 +2,11 @@
 
 @section('content')
     {{-- <img src="{{asset('spider.jpg')}}" class="cover"> --}}
-    {{-- <div>
-        {{Auth::user()->name}}
-    </div> --}}
+    <i class="fa-solid fa-user"></i> {{Auth::user()->name}}
+    <form action="{{route('logout')}}" method="post" class="text-start">
+     @csrf
+     <button class="btn btn-primary text-white">logout</button>
+   </form>
     <div class="container">
         <div class="row mt-2">
             <div class="col-4 ">
