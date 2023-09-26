@@ -1,3 +1,4 @@
+
 <?php
 // constant is only create and read
 // define('HI',"hello world");
