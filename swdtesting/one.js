@@ -95,9 +95,37 @@ a.greet();*/
 
 let user = {
    name: "Bob",
-   hello: function() {
-   return `Hello, I'm ${this.name}`
-   } }
- $tea =  user.hello();
- console.log($tea);
+   hello: () => `Hello, I'm ${this.name}`,
+}
+$tea = user.hello();
+console.log($tea);
 
+//construct parent want to use
+class Animal {
+   constructor(name) {
+      this.name = name
+   }
+   run() {
+      console.log(`${this.name} is running...`)
+   }
+}
+
+class Cat extends Animal {
+   constructor(name, color) {
+      super(name)
+      this.color = color
+   }
+   meow() {
+      console.log(`${this.name}: Meow.. meow..`)
+   }
+}
+
+let cat = new Cat("Shwe War", "Yellow")
+cat.meow()
+
+//   JavaScript ဟာ Single-Threaded ပုံစံအလုပ်လုပ်တဲ့ နည်းပညာဖြစ်ပါတယ
+//Event Loop
+console.log(1)
+console.log(2)
+setTimeout(() => console.log(3), 1000)
+console.log(4)
