@@ -129,3 +129,95 @@ console.log(1)
 console.log(2)
 setTimeout(() => console.log(3), 1000)
 console.log(4)
+
+//promise
+console.log("this is promise start")
+function add1000() {
+   let result = 0
+   for (let i = 1; i <= 1000; i++) {
+      result += i
+   }
+   return result
+}
+
+function add1000later() {
+   return new Promise(done => {
+      done(add1000())
+   })
+}
+let ab = add1000later();
+console.log(ab);
+console.log("hello world promise")
+
+//.then
+console.log("some processes")
+add1000later().then(result => console.log(result))
+console.log("more processes")
+
+/*function add1000later() {
+return new Promise( (resolve, reject) => {
+let result = add1000()
+if(result) resolve(result)
+else reject()
+})
+}
+
+add1000later()
+ .then( result => console.log(result) )
+ .catch( () => console.log("Error") )
+
+
+
+*/
+
+// add1000later()
+//  .then( result => result + 1000)
+//  .then( result => console.log(result) )
+//  .catch( () => console.log("Error") )
+
+
+/**/ /**/ /**/ /**/ /**/ /**/  /**/ /**/ /**/  /**/ /**/ /**/ 
+/*
+async function add1000later() {
+let result = await add1000()
+console.log(result)
+}
+undefined
+console.log("some processes")
+add1000later()
+console.log("more processes")
+VM59:1 some processes
+VM59:3 more processes
+VM55:3 500500
+*/
+
+/*
+fetch("https://api.covid19api.com/summary")
+ .then(res => res.json())
+ .then(data => {
+ const global = data.Global
+ const allCountries = data.Countries
+ const myanmar = allCountries.find(c => c.Country === "Myanmar")
+ console.log("Global:", global, "Myanmar:", myanmar)
+ })*/
+
+ const person = {
+   firstName: "John",
+   lastName : "Doe",
+   id       : 5566,
+   fullName : function() {
+     return this.firstName + " " + this.lastName;
+   }
+ };
+
+ const obj1 = {
+   a : "aaa"
+ }
+ const obj2 = {
+    b: "ccc"
+ }
+const obj3 = {
+   ...obj1,
+   ...obj2
+}
+ console.log({...obj2,b : "sss"} );

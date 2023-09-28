@@ -3,3 +3,21 @@
 ရတော့ဘဲ စောင့်ရတော့မှာလား။ ဒီလိုမဖြLစ်တွေအင်္ဂာင်တော့ စီစဉ်ထားပါတယ်။ ဒီအင်္ဂတွက် Message Queue,
 Frame Stack, Event Loop စတဲ့ သီအင်္ဂိုရီပိုင်းဆိုင်ရာ သဘောသဘာဝတွေရှိပါတယ်။ အင်္ဂဲ့ဒါတွေကို မြင်
 လွယ်တွေအင်္ဂာင် ဒီလိုလေးမြင်ကြည့်ပါ။
+
+• All Cap: HELLO_WORLD
+• Snake Case: hello_world
+• Camel Case: helloWorld
+• Capital Case: HelloWorld
+
+Constant တွေကြေညာLို့အင်္ဂတွက် All Cap ကို အင်္ဂသုံးပြုသင့်ပါတယ်။ ရိုးရိုး Variable တွေအင်္ဂတွက် Snake
+ Case ကိုသုံးသင့်ပြီး၊ Object Property တွေအင်္ဂတွက် camelCase ကိုသုံးသင့်ပါတယ်။
+
+ doctype
+html
+├── head
+│ └── title
+└── body
+ ├── h1
+ └── p
+ ├── Text
+ └── a

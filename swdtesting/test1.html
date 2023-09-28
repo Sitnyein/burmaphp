@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Title</title>
+ <style>
+ .box {
+ position:relative;
+ width: 800px;
+ height: 30px;
+ padding: 10px;
+ background: skyblue;
+ border: 5px solid darkblue;
+ }
+ #ball {
+ position:absolute;
+ left: 0;
+ top: 0;
+ width: 30px;
+ height: 30px;
+ border-radius: 30px;
+ background-color: red;
+ }
+ </style>
+</head>
+<body>
+ <div class="box">
+ <div id="ball"></div>
+ </div>
+ <button onclick="play()" id="myP" style="margin-top: 30px;">click</button>
+</body>
+<!-- <script>
+    function addclick() {
+    let ball = document.querySelector("#ball")
+    ball.style.left = "100px"
+    }
+   </script> -->
+
+   <!-- <script>
+    let ball = document.querySelector("#ball")
+   
+    let left = 0
+   
+    setInterval(() => {
+    left += 1
+    if(left > 790) left = 0
+    ball.style.left = `${left}px`
+    }, 10)
+   </script> -->
+
+<!-- <script>
+    let ball = document.querySelector("#ball")
+   
+    let left = 0
+    let direction = "right"
+    setInterval(
+        () => {
+    if(direction === "right") {
+    left += 1
+    if(left > 790) direction = "left"
+    }
+     else {
+    left -= 1
+    if(left < 1) direction = "right"
+    }
+    ball.style.left = `${left}px`
+    }, 10)
+   </script> -->
+
+   <script>
+    let clickball = 0
+    let ball = document.querySelector('#ball');
+    function addclick () {
+        
+        clickball += 1;
+        if(clickball == 790) {
+            clickball = 0;
+          
+        }
+         ball.style.left = `${clickball}px`;
+
+        
+    } 
+   function play() {
+    setInterval(addclick,1);
+   } 
+    // document.getElementById("myP").addEventListener("click", addclick , true);
+    //  Documet.getElementByTagName('button').addEventlistener("click",addclick);
+    
+   </script>
+   </html>
