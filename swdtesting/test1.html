@@ -23,6 +23,7 @@
  </style>
 </head>
 <body>
+    <h3 id="head">this is minga larrrr par</h3>
  <div class="box">
  <div id="ball"></div>
  </div>
@@ -71,7 +72,7 @@
     let ball = document.querySelector('#ball');
     function addclick () {
         
-        clickball += 1;
+        clickball += 10;
         if(clickball == 790) {
             clickball = 0;
           
@@ -81,10 +82,14 @@
         
     } 
    function play() {
-    setInterval(addclick,1);
+    // setInterval(addclick,1000);
+    setInterval(addclick,10);
+
    } 
     // document.getElementById("myP").addEventListener("click", addclick , true);
     //  Documet.getElementByTagName('button').addEventlistener("click",addclick);
-    
+    let head = document.getElementById('head');
+    console.log(head.innerHTML)
+    console.log(head.innerText)
    </script>
    </html>
