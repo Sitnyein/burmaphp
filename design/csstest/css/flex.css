@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0
+}
+.box {
+   
+    width:600px;
+    height:500px;
+    /* border:3px solid black; */
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    /* gap: 30px;
+    flex-wrap: wrap;
+    align-content: start; */
+
+
+}
+
+.obj {
+    /* padding:50px; */
+    height: 100px;
+
+    
+}
+.box-one{
+    background-color: rgb(48, 143, 175);
+    flex-grow: 6;
+    
+}
+.box-two{
+    background-color: rgb(201, 138, 185);
+    flex-grow: 3;
+}
+.box-three {
+    background-color: rgb(228, 235, 135);
+    flex-grow: 3;
+}
