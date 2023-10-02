@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+           
+            border: 5px solid black;
+            margin:50px;
+            perspective: 3in;
+            perspective-origin: center;
+        }
+        .photo{
+           width:200px;
+           display: block;
+           /* transform: translate(-50px) translateY(20px);*/
+           /* translate:(x)(y) */
+           /* translate: 40px 100px; */
+           /* transform:rotateX(20deg) rotateY(20deg) rotateZ(20deg); */
+              transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+              transform-origin: 0px 100%;
+           /* rotate: 20deg; */
+            /* scale:1.5 */
+            /* transform: skew(10deg); */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img  src="./image/movie2.jpg" alt="" class="photo">
+    </div>
+</body>
+</html>

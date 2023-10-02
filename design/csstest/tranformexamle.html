@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 2000px;
+        }
+        header {
+            border: 2px solid black;
+            display: flex;
+            justify-content: space-between;
+            margin:20px;
+            padding:20px;
+            align-items: center;
+        }
+        .toogle-menu {
+            background-color: black;
+            color:white;
+            width:50px;
+            height: 50px;
+            border:none;
+            font-size: 2rem;
+        }
+        .toogle-menu:focus + nav {
+           
+            transform: translateX(0%);
+            opacity: -1;
+        }
+        
+        .menu-box {
+            border: 2px solid red;
+            position: relative;
+            
+        }
+        .menu-box nav {
+         
+            width: 500px;
+            position: fixed;
+            border:2px solid black;
+            right:0;
+            bottom:0;
+            height: 100vh;
+            background-color: gray;
+            padding:120px 20px;
+            transform: translateX(100%);
+            transition: 2s;
+        }
+        .menu-link {
+            border: 2px solid black;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 2rem;
+            color:black;
+            margin-bottom:20px;
+        }
+        .main{
+            display: flex;
+            justify-content: space-between;
+        }
+        .content {
+         perspective:10px;
+         perspective-origin:right ;
+         margin:20px 0px;
+      
+  
+        }
+        .photo {
+            display: block;
+            margin-top: 100px;
+         /* position: fixed; */
+         transform: translateX(-80%) translateY(0) rotateZ(30deg) ;
+         filter: blur(4px);
+         box-shadow: 0 0 20px 10px #00000060;
+
+         /* transform:  rotateZ(22deg) ; */
+         
+        }
+        .photo:hover{
+            transition: 5s;
+            transform: translateX(0%) translateY(0) rotateZ(10deg) ;
+            filter: blur(0px);
+        }
+       
+         
+       
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="brand-title">MMS</h1>
+        <div class="menu-box">
+            <button class="toogle-menu">
+                <i class="bi bi-blockquote-right"></i>
+            </button>
+            <nav class="menu-title">
+                <a href="#" class="menu-link">Home</a>
+                <a href="#" class="menu-link">About</a>
+                <a href="#" class="menu-link">Services</a>
+                <a href="#" class="menu-link">Contact </a>
+                <a href="#" class="menu-link">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+       <div class="main">
+        <div class="content">
+        
+            <img src="./image/movie3.jpg" class="photo" width="300px" alt="">
+            <img src="./image/movie3.jpg" class="photo" width="300px" alt="">
+            <img src="./image/movie2.jpg" class="photo" width="300px" alt="">
+         </div>
+         <div class="content">
+        
+            <img src="./image/movie3.jpg" class="photo" width="300px" alt="">
+            <img src="./image/movie3.jpg" class="photo" width="300px" alt="">
+            <img src="./image/movie2.jpg" class="photo" width="300px" alt="">
+         </div>
+       </div>
+       <button id="button" onclick="showname()">click me</button>
+</body>
+
+
+</html>
