@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+ *{
+   margin:0; padding:0; box-sizing:border-box;
+   scroll-behavior: smooth;
+   font-family: 'Dancing Script', cursive;
+   text-decoration: none; list-style-type: none;
+}
+:root{
+    --main-color:gold;
+    --text-color:white;
+    --bg-color: rgb(36, 34, 34);
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    
+}
+header{
+    position:sticky; width:100%; top:0;
+    display:flex; padding:20px 100px;
+    justify-content: space-between;
+    transition:0.5s;
+    font-size:30px;
+    background-color:black;
+}
+.logo{
+    font: size 1.1rem; font-weight: 600;
+    color: var(--text-color);
+    display:flex; align-items: center;
+    
+}
+.logo i { margin-right:5px;}
+.navbar{
+    display:flex; align-items: center;
+    column-gap:3rem; 
+}
+.navbar a { color:var(--text-color);
+font-weight: 500;  }
+.navbar li { position:relative;}
+.btn{ background-color: var(--main-color); padding:0.7rem 1.4rem;
+    color:var(--text-color); font-weight:500px;
+    border-radius:0.5rem;
+
+}
+.navbar a::after{ content:""; width:0%; height:2px;
+    background-color: var(--main-color);
+    position:absolute; bottom:-4px; left:0;
+    transition:0.5s;
+
+}
+.navbar a:hover::after, .navbar .active::after{
+    width:100%;
+}
+.navbar .active::after{
+    content:""; width:100%; height:2px;
+    background-color: var(--main-color);
+    position:absolute; bottom:-4px; left:0;
+    transition:0.5s;
+
+}
+.btn:hover{
+    background-color:rgb(206, 21, 21);
+
+}
+.container{
+    width:100%; min-height:640px; position:relative; 
+    display:flex; align-items: center;
+
+}
+.container img{
+    position:absolute;
+    z-index: -1; width:100%; height:100%;
+    object-fit: cover; object-position: center;
+    opacity: 0.8;
+}
+.home-text{
+padding-left:200px;
+
+}
+.home-text-span{
+    color:var(--text-color);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.home-text h1{
+   color:var(--text-color); font-size:4rem;
+   font-weight:700; margin-bottom: 1rem;
+}
+.home-text .play{
+    position:absolute;
+    right:4rem;
+    bottom:10%; display:flex; justify-content: center;
+     align-items: center; transition:1s;
+
+}
+.home-text .play .bx{
+    color:var(--text-color);
+    font-size: 2rem;
+    background-color: var(--main-color);
+    border-radius:50%; padding:10px; 
+    border:4px solid black;
+    margin-right:30px;
+    
+}
+.home-text .play .bx:hover {
+    transform: scale(1.2);
+    filter:brightness(1.3);
+
+}
+/* movie section */
+.heading{
+    max-width:968px;
+    margin:10px auto 10px auto;
+     font-size:1.5rem;
+    font-weight:500; text-transform:uppercase;
+    border-bottom:1px solid var(--main-color);
+
+}
+.movie-container{
+    max-width:960px;
+    margin:0px auto;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px,auto));
+    /* grid-template-columns: auto auto auto auto; */
+    
+    gap:2rem; margin-top:2rem;
+}
+.box .box-img{
+    width:100%;
+    height:400px;
+    
+    
+
+}
+.box .box-img img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    filter:brightness(0.8); transition: 0.5s;
+    box-shadow:10px 10px 10px #fefefe02;
+    
+}
+.box .box-img h3{
+    margin-top:3rem;
+}
+.box .box-img img:hover {
+    transform: translateY(-10px); 
+    filter: brightness(1);
+}
+.contact{
+    max-width:968px;
+    margin:0 auto;
+    align-items:center; justify-content: center; margin-top:50px;
+    display:flex;
+    flex-direction: column;
+}
+.contact h2{
+    font-size:2rem; font-weight: 600;
+    
+    margin-bottom: 10px;
+}
+.contact form{
+   background-color: var(--text-color);
+    padding:10px;
+    border: radius 0.5rem;
+    display:flex; align-items: center; justify-content: center;
+}
+.contact form .email{
+    border:none; outline:none;
+    background-color: var(--text-color);
+    display:flex;
+}
+.contact form .btn{
+    text-transform: uppercase; font-weight: 500;
+    cursor:pointer; border:none; outline: none;
+}
+
+.footer{
+    max-width:968px; margin:30px 0px 0px;
+    display:flex; justify-content: space-between;
+    
+}
+.social{
+    display:flex; gap:1rem;
+}
+.social .bx{
+    background-color:brown;
+    padding:2px; border-radius: 50%;
+    font-size:2rem; transition: 0.5s;
+    border:4px solid black; color:var(--text-color);
+
+}
+.social .bx:hover{
+    
+    filter:brightness(1.5);
+
+}
+.copyright{
+    background-color: brown;
+    text-align:center;
+    margin:20px;
+    padding:10px 0px;
+}
+html::-webkit-scrollbar {
+   background-color: var(--text-color);
+    width: 10px;}
+html::-webkit-scrollbar-thumb {
+    background:brown;
+    border-radius: 10px;}
+
+@media (max-width:1080px) {
+        .home-text{ padding:0px 100px;}
+    }
+    @media (max-width: 991px) {
+        .home-text h1 {
+            font-size:3rem;
+        } .home-text{
+            padding:0 4%;
+        }
+        section{
+            padding:20px 0px;
+        }
+    }
+    @media (max-width: 900px ){
+        header{ 
+            padding:12px 4%;
+        }
+        .navbar{
+            padding:0 100px; display:none;
+        } 
+        .home-text h1{
+            font-size:2rem;
+        }
+        .btn{
+            padding:0.6rem 1.2rem;
+        }
+    .movie-container{
+        grid-template-columns: repeat(auto-fit, minmax(180px,auto));
+    }
+    .footer{
+        margin:0px 20px;
+    }
+
+    }
+    @media (max-width:470px){
+        .footer{
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact form.email{
+            width:auto;
+        }
+        .copyright{
+            padding:0px 20px;
+            font-size:15px;
+        }
+        
+    }
+    @media (max-width: 370px){
+        header{
+        padding: 6px 4%; }
+        header .logo{
+            font-size:10px;
+        }
+       header .home-text {margin-left: 20px}
+        header .btn{
+            padding:0.4rem 0.7rem;
+        }
+        header .home-text h1{
+            font-size:1.7rem;}
+         header .home-text .play{
+                right:1rem;
+                bottom:7%;
+            }
+             .box .box-img{
+                height:240px;
+            }
+    }
