@@ -1,0 +1,33 @@
+//for typing
+https://www.how-to-type.com/touch-typing-lessons/how-to-type-numbers/
+Font awesome link 
+https://fontawesome.com
+Google font links 
+https://fonts.google.com
+Cdn Js link 
+https://cdnjs.com
+Display Flex Reference Links
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+Game for flex box
+https://flexboxfroggy.com/
+CSS filter properties
+Ref links  
+https://developer.mozilla.org/en-US/docs/Web/CSS/filter
+Column Properties
+Ref Links https://www.w3schools.com/cssref/css3_pr_columns.asp
+Color Ref link
+https://mui.com/material-ui/customization/color/
+- Transform Properties
+Ref links
+https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+ SVG vs Simple Image
+Ref Links  https://undraw.co/illustrations
+Useful CSS libraries
+Animate CSS
+https://animate.style/
+Image Hover Css
+http://imagehover.io/
+Feather Icons
+https://feathericons.com/
+template/laravel
+https://www.grepper.com/answers/278138/laravel+table+data+types

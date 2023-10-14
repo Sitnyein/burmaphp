@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Young+Serif&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply bg-blue-500 px-2.5 py-2 rounded-md 
+        hover:bg-transparent hover:text-black hover:border-blue-500 
+        hover:border-[2px]
+        transition-all duration-300
+    }
+}
