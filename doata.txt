@@ -1,0 +1,284 @@
+To install Warcraft III on Ubuntu, you can use a program called Wine, which allows you to run Windows applications on Linux. Here's a step-by-step guide to help you install and run Warcraft III on Ubuntu:
+
+Install Wine:
+
+If you haven't already, you need to install Wine. Open a terminal and run the following commands:
+
+bash
+Copy code
+sudo dpkg --add-architecture i386  # Enable 32-bit architecture
+sudo apt update
+sudo apt install wine64 wine32
+During the installation, you might be asked to confirm some prompts. Make sure you agree to install any required packages.
+
+Download Warcraft III:
+
+You can either install Warcraft III from your original CD/DVD or download it from an authorized source. Ensure that you have the Warcraft III installer executable file, usually ending in ".exe."
+
+Install Warcraft III:
+
+Navigate to the directory where the Warcraft III installer file is located in your terminal and run it using Wine:
+
+bash
+Copy code
+wine Warcraft-III-Installer.exe
+Replace "Warcraft-III-Installer.exe" with the actual name of your installer file.
+
+Follow the Installer:
+
+The Warcraft III installer will start, and you can follow the on-screen instructions to complete the installation. Make sure to install it in the default directory.
+
+Install Additional Components:
+
+Warcraft III might require some additional components or libraries to run correctly. Wine often prompts you to install these components if they are missing. Follow the prompts to install them.
+
+Run Warcraft III:
+
+After the installation is complete, you can run Warcraft III by executing the following command:
+
+bash
+Copy code
+wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Warcraft\ III/Warcraft\ III.exe
+This command assumes that Warcraft III was installed in the default Wine directory. If you installed it in a different location, adjust the path accordingly.
+
+Configure Warcraft III:
+
+Configure the game settings, such as graphics and sound, as needed. You may also want to apply any patches or updates if they are available.
+
+That's it! You should now have Warcraft III running on your Ubuntu system using Wine. Keep in mind that Wine compatibility can vary depending on the version and your system configuration, so you might need to troubleshoot or look for specific Wine configurations for Warcraft III if you encounter any issues.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="row">
+                        <div class="col-3">
+                            <h4 class="text-secondary">Search Key :<span class="text-danger"> {{ request('key') }}</span>
+                            </h4>
+                        </div>
+                        <div class="col-3 offset-9">
+                            <form action="{{ route('category#list') }}" method="get">
+                                <div class="d-flex">
+                                    <input type="text" name="key" class="form-control" placeholder="search..."
+                                        value={{ request('key') }}>
+                                    <button class="btn bg-dark text-white" type="submit">
+                                        <i class="fa-solid fa-magnifying-glass "></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-2 offset-10 btn bg-white shadow-sm py-1 px-1 text-center ">
+                            <h3> <i class="fa-solid fa-database mr-2"></i> {{ $categories->total() }} </h3>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body>
+    <div class="max-w--[450px] border border-neutral-700 p-6 mx-auto">
+        <div class="gird gird-cols-3"></div>
+        <div>
+            <label for="">Select font</label>
+            <select class="border border-neutral-700 block w-full h-10" name="" id="">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+        </div>
+        <div>
+            <label for="">Text color</label>
+            <input type="color">
+        </div>
+         <div>
+            <label for="">Font size</label>
+             <input class="border border-neutral-700 block w-full h-10" type="range" name="" id="">
+        </div>
+        <div class="col-span-3">
+            <label for="">Your Text</label>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <textarea class="border border-neutral-700 block w-full h-10" name="" id="" cols="30" rows="5"></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+East Blue Arc - 61 episodes
+- Romance Dawn Arc - 1-4 (4 episodes)
+- Orange Town Arc - 4-8 (5 episodes)
+- Syrup Village Arc - 9-18 (10 episodes)
+- Baratie Arc - 19-30 (12 episodes)
+- Arlong Park Arc - 31-44 (14 episodes)
+- Loguetown Arc - 45, 48-53 (7 episodes)
+- Warship Island Arc - 54-61 (8 episodes)
+Arabasta Arc - 73 episodes
+- Reverse Mountain Arc - 62-63 (2 episodes)
+- Whiskey Peak Arc - 64-67 (4 episodes)
+- Coby and Helmeppo Arc - 68-69 (2 episodes)
+- Little Garden Arc - 70-77 (8 episodes)
+- Drum Island Arc - 78-91 (14 episodes)
+- Arabasta Arc - 92-130 (39 episodes)
+- Post-Arabasta Arc - 131-135 (5 episodes)
+Skypiea Arc - 70 episodes
+- Goat Island Arc - 136-138 (3 episodes)
+- Ruluka Island Arc - 139-143 (5 episodes)
+- Jaya Arc - 144-152 (9 episodes)
+- Skypiea Arc - 153-195 (43 episodes)
+- G-8 Arc - 196-206 (11 episodes)
+Water 7 Arc - 118 episodes
+- Long Ring Rong Land Arc - 207-219 (13 episodes)
+- Ocean's Dream Arc - 220-224 (5 episodes)
+- Foxy's Return Arc - 225-228 episode (4 episodes)
+- Water 7 Arc - 229-263 (35 episodes)
+- Enies Lobby Arc - 264-290, 293-302, 304-312 (46 episodes)
+- Post-Enies Lobby Arc - 313-325 (13 episodes)
+Thriller Bark Ark - 58 episodes
+- Lovely Island or Ice Hunter Arc - 326-335 (10 episodes)
+- Thriller Bark Arc - 337-381 (45 episodes)
+- Spa Island Arc - 382-384 (3 episodes)
+Summit War Arc - 131 episodes
+- Sabaody Archipelago Arc - 385-405 (21 episodes)
+- Amazon Lily Arc - 408-421 (14 episodes)
+- Impel Down Part 1 Arc - 422-425 (4 episodes)
+- Little East Blue Arc - 426-429 (4 episodes)
+- Impel Down Part 2 Arc - 430-452 (23 episodes)
+- Marine Ford Arc - 457-489 (33 episodes)
+- Post-War Arc - 490-491, 493-516 (26 episodes)
+Fishman Island Arc - 136 episodes
+- Return to Sabaody Arc - 517-522 (6 episodes)
+- Fishman Island Arc - 603-653 (51 episodes)
+Pirate Alliance Arc - 384 episodes
+- Z's Ambition Arc - 575-578 (4 episodes)
+- Punk Hazard Arc - 579-589, 591-625 (46 episodes)
+- Caesar Retrieval Arc - 626-628 (3 episodes)
+- Dressrosa Arc - 629-746 (18 episodes)
+- Zou Arc - 751-779 (29 episodes)
+- Whole Cake Island Arc - 783-877 (95 episodes)
+- Reverie Arc - 878-889 episode (12 episodes)
+- Wano Arc - 890-894, 897-906, 908-959 (Latest) 
+- Admin Yancy
+
